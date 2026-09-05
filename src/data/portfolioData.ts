@@ -48,10 +48,9 @@ export const portfolioData = {
     location: "Hyderabad, India • Open to Worldwide Opportunities",
     contact: {
       email: "sanjeebgochhayat1999@gmail.com",
-      phone: "+91-73771-88155",
-      github: "https://github.com/sanjeebgochhayat",
-      linkedin: "https://linkedin.com/in/sanjeebgochhayat",
-      twitter: "https://twitter.com/sanjeeb_dev",
+      github: "https://github.com/sanjeeb-gochhayat",
+      linkedin: "https://www.linkedin.com/in/sanjeeb-gochhayat/",
+      twitter: "https://x.com/IM_SGT_",
     }
   },
 

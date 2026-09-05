@@ -1,6 +1,6 @@
 import React, { useState, Suspense } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, Copy, Check, Sparkles, ArrowRight } from 'lucide-react';
+import { Mail, Copy, Check, Sparkles, ArrowRight } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { portfolioData } from '../../data/portfolioData';
 import { ContactOrb } from '../3d/ContactOrb';
@@ -10,7 +10,6 @@ import { GithubIcon, LinkedinIcon, TwitterIcon } from '../ui/SocialIcons';
 
 export const Contact: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedPhone, setCopiedPhone] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
@@ -18,14 +17,6 @@ export const Contact: React.FC = () => {
     navigator.clipboard.writeText(portfolioData.personal.contact.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2500);
-  };
-
-  const handleCopyPhone = () => {
-    if (portfolioData.personal.contact.phone) {
-      navigator.clipboard.writeText(portfolioData.personal.contact.phone);
-      setCopiedPhone(true);
-      setTimeout(() => setCopiedPhone(false), 2500);
-    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -105,35 +96,9 @@ export const Contact: React.FC = () => {
                 </button>
               </div>
 
-              {/* Phone Copy Card */}
-              {portfolioData.personal.contact.phone && (
-                <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-3 overflow-hidden">
-                    <div className="p-2 rounded-xl bg-emerald-950 border border-emerald-500/30 text-emerald-400 shrink-0">
-                      <Phone className="h-4 w-4" />
-                    </div>
-                    <div className="truncate">
-                      <span className="font-mono text-[10px] text-slate-500 block">Mobile Phone</span>
-                      <span className="font-mono text-xs text-slate-200 truncate block">
-                        {portfolioData.personal.contact.phone}
-                      </span>
-                    </div>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={handleCopyPhone}
-                    className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer shrink-0"
-                    aria-label="Copy phone number"
-                  >
-                    {copiedPhone ? <Check className="h-4 w-4 text-emerald-400" /> : <Copy className="h-4 w-4" />}
-                  </button>
-                </div>
-              )}
-
-              {(copiedEmail || copiedPhone) && (
+              {copiedEmail && (
                 <p className="font-mono text-[11px] text-emerald-400 mt-2 text-right">
-                  ✓ {copiedEmail ? 'Email' : 'Phone'} copied to clipboard!
+                  ✓ Email copied to clipboard!
                 </p>
               )}
             </div>
@@ -168,10 +133,11 @@ export const Contact: React.FC = () => {
                   href={portfolioData.personal.contact.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="X (formerly Twitter)"
                   className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex flex-col items-center justify-center gap-1.5 text-slate-300 hover:text-white hover:border-purple-500/50 transition-colors group"
                 >
                   <TwitterIcon className="h-5 w-5 text-purple-400 group-hover:scale-110 transition-transform" />
-                  <span className="font-mono text-[10px]">Twitter</span>
+                  <span className="font-mono text-[10px]">X</span>
                 </a>
               </div>
             </div>
