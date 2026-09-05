@@ -35,13 +35,13 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="inline-flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-900/70 px-4 py-1.5 backdrop-blur-md mb-6 shadow-lg shadow-black/40"
+          className="inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-slate-700/60 bg-slate-900/70 px-3.5 sm:px-4 py-1.5 backdrop-blur-md mb-6 shadow-lg shadow-black/40 text-center"
         >
-          <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
-          <span className="font-mono text-xs text-slate-300">
+          <Sparkles className="h-3.5 w-3.5 text-cyan-400 shrink-0" />
+          <span className="font-mono text-[11px] sm:text-xs text-slate-300">
             Frontend Engineer • 4.5+ Years Experience • Infosys
           </span>
-          <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
+          <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse shrink-0" />
         </motion.div>
 
         {/* Name Title */}

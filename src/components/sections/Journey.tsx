@@ -8,7 +8,7 @@ export const Journey: React.FC = () => {
   const activeExp = portfolioData.experiences[activeExpIdx];
 
   return (
-    <section id="journey" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="journey" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       {/* Background ambient light */}
       <div className="pointer-events-none absolute bottom-1/3 left-1/4 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[140px]" />
 

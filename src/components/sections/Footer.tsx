@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="border-t border-slate-800/80 bg-[#02050c] py-12 px-4 sm:px-6 lg:px-8 text-slate-400">
+    <footer className="border-t border-slate-800/80 bg-[#02050c] py-12 px-4 sm:px-6 lg:px-8 text-slate-400 w-full max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Left: Brand & Title */}
         <div className="flex flex-col items-center md:items-start gap-1 text-center md:text-left">

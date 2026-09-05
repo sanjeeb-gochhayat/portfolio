@@ -101,11 +101,11 @@ export const Projects: React.FC = () => {
               <span className="font-mono text-[10px] text-slate-500">Complexity: O(log n)</span>
             </div>
 
-            <div className="flex items-center justify-center gap-2 py-4">
+            <div className="flex items-center justify-center gap-2 py-4 max-w-full overflow-x-auto">
               {[12, 24, 37, 49, 61, 78, 92].map((num, i) => (
                 <div
                   key={i}
-                  className={`flex flex-col items-center justify-center w-8 h-12 rounded-lg border font-mono text-xs font-bold ${
+                  className={`flex flex-col items-center justify-center w-8 h-12 rounded-lg border font-mono text-xs font-bold shrink-0 ${
                     i === 3
                       ? 'border-amber-400 bg-amber-400/20 text-amber-300 shadow-[0_0_10px_rgba(245,158,11,0.4)]'
                       : 'border-slate-800 bg-slate-900/60 text-slate-400'
@@ -127,7 +127,7 @@ export const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="projects" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       {/* Background glow */}
       <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-cyan-500/5 rounded-full blur-[160px]" />
 

@@ -235,7 +235,7 @@ const BackgroundDust: React.FC = () => {
 
 export const HeroScene: React.FC = () => {
   return (
-    <div className="absolute inset-0 z-0 h-full w-full pointer-events-none select-none">
+    <div className="absolute inset-0 z-0 h-full w-full pointer-events-none select-none overflow-hidden">
       <Canvas
         camera={{ position: [0, 0, 6.2], fov: 45 }}
         dpr={[1, 2]}

@@ -44,7 +44,7 @@ export const DsaShowcase: React.FC = () => {
   };
 
   return (
-    <section id="dsa" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="dsa" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       {/* Background ambient glow */}
       <div className="pointer-events-none absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[150px]" />
 
@@ -84,7 +84,8 @@ export const DsaShowcase: React.FC = () => {
             </p>
 
             {/* Array Elements Visualizer */}
-            <div className="flex items-center justify-center gap-1.5 sm:gap-2 mb-6 overflow-x-auto py-2">
+            <div className="w-full overflow-x-auto py-2 mb-6 custom-scrollbar">
+              <div className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 min-w-max mx-auto px-1">
               {sortedArray.map((val, idx) => {
                 const isMid = idx === currentBs.mid;
                 const isEliminated = idx < currentBs.low || idx > currentBs.high;
@@ -108,6 +109,7 @@ export const DsaShowcase: React.FC = () => {
                   </div>
                 );
               })}
+              </div>
             </div>
 
             {/* Pointers Legend & Step Description */}
@@ -188,56 +190,58 @@ export const DsaShowcase: React.FC = () => {
             </div>
 
             {/* Tree Node Visual Diagram */}
-            <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-950 border border-slate-800 mb-4">
-              {/* Level 1: Root 50 */}
-              <div className="flex justify-center mb-4">
-                <div
-                  className={`flex h-10 w-10 items-center justify-center rounded-full border font-mono text-xs font-bold transition-all duration-300 ${
-                    visitedNodes.includes(50)
-                      ? 'border-cyan-400 bg-cyan-400/20 text-cyan-300 shadow-[0_0_12px_rgba(56,189,248,0.5)] scale-110'
-                      : 'border-slate-700 bg-slate-900 text-slate-300'
-                  }`}
-                >
-                  50
-                </div>
-              </div>
-
-              {/* Level 2: 30 and 70 */}
-              <div className="flex justify-around w-64 mb-4">
-                <div
-                  className={`flex h-9 w-9 items-center justify-center rounded-full border font-mono text-xs font-bold transition-all duration-300 ${
-                    visitedNodes.includes(30)
-                      ? 'border-cyan-400 bg-cyan-400/20 text-cyan-300 shadow-[0_0_12px_rgba(56,189,248,0.5)] scale-110'
-                      : 'border-slate-700 bg-slate-900 text-slate-300'
-                  }`}
-                >
-                  30
-                </div>
-                <div
-                  className={`flex h-9 w-9 items-center justify-center rounded-full border font-mono text-xs font-bold transition-all duration-300 ${
-                    visitedNodes.includes(70)
-                      ? 'border-cyan-400 bg-cyan-400/20 text-cyan-300 shadow-[0_0_12px_rgba(56,189,248,0.5)] scale-110'
-                      : 'border-slate-700 bg-slate-900 text-slate-300'
-                  }`}
-                >
-                  70
-                </div>
-              </div>
-
-              {/* Level 3: Leaves (20, 40, 60, 80) */}
-              <div className="flex justify-between w-80">
-                {[20, 40, 60, 80].map((val) => (
+            <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-slate-950 border border-slate-800 mb-4 w-full overflow-x-auto">
+              <div className="flex flex-col items-center w-full max-w-[300px] min-w-[240px] py-1">
+                {/* Level 1: Root 50 */}
+                <div className="flex justify-center mb-4">
                   <div
-                    key={val}
-                    className={`flex h-8 w-8 items-center justify-center rounded-full border font-mono text-xs font-bold transition-all duration-300 ${
-                      visitedNodes.includes(val)
+                    className={`flex h-10 w-10 items-center justify-center rounded-full border font-mono text-xs font-bold transition-all duration-300 ${
+                      visitedNodes.includes(50)
                         ? 'border-cyan-400 bg-cyan-400/20 text-cyan-300 shadow-[0_0_12px_rgba(56,189,248,0.5)] scale-110'
                         : 'border-slate-700 bg-slate-900 text-slate-300'
                     }`}
                   >
-                    {val}
+                    50
                   </div>
-                ))}
+                </div>
+
+                {/* Level 2: 30 and 70 */}
+                <div className="flex justify-around w-full max-w-[200px] mb-4">
+                  <div
+                    className={`flex h-9 w-9 items-center justify-center rounded-full border font-mono text-xs font-bold transition-all duration-300 ${
+                      visitedNodes.includes(30)
+                        ? 'border-cyan-400 bg-cyan-400/20 text-cyan-300 shadow-[0_0_12px_rgba(56,189,248,0.5)] scale-110'
+                        : 'border-slate-700 bg-slate-900 text-slate-300'
+                    }`}
+                  >
+                    30
+                  </div>
+                  <div
+                    className={`flex h-9 w-9 items-center justify-center rounded-full border font-mono text-xs font-bold transition-all duration-300 ${
+                      visitedNodes.includes(70)
+                        ? 'border-cyan-400 bg-cyan-400/20 text-cyan-300 shadow-[0_0_12px_rgba(56,189,248,0.5)] scale-110'
+                        : 'border-slate-700 bg-slate-900 text-slate-300'
+                    }`}
+                  >
+                    70
+                  </div>
+                </div>
+
+                {/* Level 3: Leaves (20, 40, 60, 80) */}
+                <div className="flex justify-between w-full max-w-[260px]">
+                  {[20, 40, 60, 80].map((val) => (
+                    <div
+                      key={val}
+                      className={`flex h-8 w-8 items-center justify-center rounded-full border font-mono text-xs font-bold transition-all duration-300 ${
+                        visitedNodes.includes(val)
+                          ? 'border-cyan-400 bg-cyan-400/20 text-cyan-300 shadow-[0_0_12px_rgba(56,189,248,0.5)] scale-110'
+                          : 'border-slate-700 bg-slate-900 text-slate-300'
+                      }`}
+                    >
+                      {val}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -295,21 +299,21 @@ export const DsaShowcase: React.FC = () => {
 
               {/* Big-O Complexity Matrix */}
               <div className="grid grid-cols-3 gap-2 mb-6">
-                <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-center">
+                <div className="p-2 sm:p-3 rounded-xl bg-slate-900 border border-slate-800 text-center">
                   <span className="text-[10px] text-slate-500 font-mono block">Best</span>
                   <span className="font-mono text-xs font-bold text-emerald-400">
                     {selectedConcept.timeComplexity.best}
                   </span>
                 </div>
-                <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-center">
+                <div className="p-2 sm:p-3 rounded-xl bg-slate-900 border border-slate-800 text-center">
                   <span className="text-[10px] text-slate-500 font-mono block">Average</span>
                   <span className="font-mono text-xs font-bold text-cyan-400">
                     {selectedConcept.timeComplexity.average}
                   </span>
                 </div>
-                <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-center">
+                <div className="p-2 sm:p-3 rounded-xl bg-slate-900 border border-slate-800 text-center">
                   <span className="text-[10px] text-slate-500 font-mono block">Space</span>
-                  <span className="font-mono text-xs font-bold text-purple-400">
+                  <span className="font-mono text-[11px] sm:text-xs font-bold text-purple-400 break-words">
                     {selectedConcept.spaceComplexity}
                   </span>
                 </div>

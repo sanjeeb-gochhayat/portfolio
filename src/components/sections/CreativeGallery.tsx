@@ -15,7 +15,7 @@ export const CreativeGallery: React.FC = () => {
   ];
 
   return (
-    <section id="creative" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="creative" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       {/* Background glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/3 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[160px]" />
 

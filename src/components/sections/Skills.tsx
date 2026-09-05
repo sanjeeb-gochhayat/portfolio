@@ -16,7 +16,7 @@ export const Skills: React.FC = () => {
   );
 
   return (
-    <section id="skills" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="skills" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       {/* Subtle background glow */}
       <div className="pointer-events-none absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[140px]" />
 

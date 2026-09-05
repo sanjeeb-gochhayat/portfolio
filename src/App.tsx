@@ -15,7 +15,7 @@ import { Footer } from './components/sections/Footer';
 
 export const App: React.FC = () => {
   return (
-    <div className="relative min-h-screen bg-[#030712] text-slate-100 font-sans selection:bg-cyan-500/25 selection:text-cyan-200">
+    <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-[#030712] text-slate-100 font-sans selection:bg-cyan-500/25 selection:text-cyan-200">
       {/* Custom Lerped Magnetic Cursor */}
       <CustomCursor />
 
@@ -26,7 +26,7 @@ export const App: React.FC = () => {
       <Navbar />
 
       {/* Main Sections */}
-      <main className="relative z-10 flex flex-col space-y-4">
+      <main className="relative z-10 flex flex-col space-y-4 w-full max-w-full overflow-x-hidden">
         <Hero />
         <About />
         <Skills />

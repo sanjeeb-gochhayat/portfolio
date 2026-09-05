@@ -87,7 +87,7 @@ export const TechnicalShowcase: React.FC = () => {
   ];
 
   return (
-    <section id="engineering" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="engineering" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       {/* Ambient background glow */}
       <div className="pointer-events-none absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[160px]" />
 
@@ -133,7 +133,7 @@ export const TechnicalShowcase: React.FC = () => {
       </div>
 
       {/* Interactive Demonstration Panel */}
-      <div className="glass-panel p-6 sm:p-10 rounded-3xl border border-slate-800/90 shadow-2xl relative">
+      <div className="glass-panel p-4 sm:p-8 lg:p-10 rounded-3xl border border-slate-800/90 shadow-2xl relative overflow-hidden">
         {/* TAB 1: React Rendering & Memoization */}
         {activeTab === 'react' && (
           <div className="space-y-8">
@@ -147,7 +147,7 @@ export const TechnicalShowcase: React.FC = () => {
             </div>
 
             {/* Interactive Workbench */}
-            <div className="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-6">
+            <div className="p-4 sm:p-6 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-6 overflow-hidden">
               {/* Controls */}
               <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-800">
                 <div className="flex items-center gap-3">
@@ -179,12 +179,12 @@ export const TechnicalShowcase: React.FC = () => {
               </div>
 
               {/* Tree Diagram */}
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center w-full overflow-x-auto py-2">
                 {/* Parent Component */}
                 <motion.div
                   animate={{ scale: lastTriggered ? [1, 1.04, 1] : 1 }}
                   transition={{ duration: 0.3 }}
-                  className="p-4 rounded-2xl border border-cyan-500/50 bg-cyan-950/30 text-center min-w-[280px] shadow-lg shadow-cyan-500/10"
+                  className="p-4 rounded-2xl border border-cyan-500/50 bg-cyan-950/30 text-center w-full max-w-[280px] shadow-lg shadow-cyan-500/10"
                 >
                   <span className="font-mono text-[11px] text-cyan-400 uppercase tracking-wider block">
                     &lt;ParentComponent /&gt;
@@ -199,7 +199,7 @@ export const TechnicalShowcase: React.FC = () => {
 
                 {/* Connecting lines */}
                 <div className="h-8 w-0.5 bg-slate-700 my-1" />
-                <div className="w-64 h-0.5 bg-slate-700 relative">
+                <div className="w-full max-w-[240px] h-0.5 bg-slate-700 relative">
                   <div className="absolute left-0 top-0 h-4 w-0.5 bg-slate-700" />
                   <div className="absolute right-0 top-0 h-4 w-0.5 bg-slate-700" />
                 </div>
